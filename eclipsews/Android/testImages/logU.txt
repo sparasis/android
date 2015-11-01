@@ -1,0 +1,165 @@
+﻿10-31 22:01:08.251  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Paint initialised.
+10-31 22:01:08.901  26366-26366/cz.wz.kotrj7am.myfirstapp W/KeyCharacterMap﹕ No keyboard for id -1
+10-31 22:01:08.901  26366-26366/cz.wz.kotrj7am.myfirstapp W/KeyCharacterMap﹕ Using default keymap: /system/usr/keychars/qwerty.kcm.bin
+10-31 22:01:09.311  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas or middle coordinates are null.
+10-31 22:01:09.331  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:09.681  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=1(int)=1
+10-31 22:01:09.681  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=0, y=0, idx=0
+10-31 22:01:09.681  26366-26366/cz.wz.kotrj7am.myfirstapp W/IInputConnectionWrapper﹕ finishComposingText on inactive InputConnection
+10-31 22:01:09.691  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:09.921  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=43(int)=43
+10-31 22:01:09.921  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=547, y=208, idx=100387
+10-31 22:01:09.931  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 273, Y = 208
+10-31 22:01:09.931  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 320 width and 480 height.
+10-31 22:01:09.941  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 1
+10-31 22:01:09.951  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:10.161  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-2(int)=254
+10-31 22:01:10.161  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=545, y=244, idx=117665
+10-31 22:01:10.171  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:10.371  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-2(int)=254
+10-31 22:01:10.371  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=398, y=235, idx=113198
+10-31 22:01:10.381  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 199, Y = 235
+10-31 22:01:10.381  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 320 width and 480 height.
+10-31 22:01:10.381  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 2
+10-31 22:01:10.401  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:10.611  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-2(int)=254
+10-31 22:01:10.611  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=206, y=262, idx=125966
+10-31 22:01:10.621  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:10.811  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-2(int)=254
+10-31 22:01:10.811  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=364, y=283, idx=136204
+10-31 22:01:10.821  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 182, Y = 283
+10-31 22:01:10.821  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 320 width and 480 height.
+10-31 22:01:10.821  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 3
+10-31 22:01:10.831  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:11.091  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-2(int)=254
+10-31 22:01:11.091  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=198, y=294, idx=141318
+10-31 22:01:11.101  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:11.301  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-2(int)=254
+10-31 22:01:11.301  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=523, y=292, idx=140683
+10-31 22:01:11.301  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 261, Y = 292
+10-31 22:01:11.301  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 320 width and 480 height.
+10-31 22:01:11.301  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 4
+10-31 22:01:11.311  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:11.511  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-2(int)=254
+10-31 22:01:11.521  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=362, y=295, idx=141962
+10-31 22:01:11.531  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:11.741  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-2(int)=254
+10-31 22:01:11.741  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=521, y=304, idx=146441
+10-31 22:01:11.741  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 260, Y = 304
+10-31 22:01:11.741  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 320 width and 480 height.
+10-31 22:01:11.741  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 5
+10-31 22:01:11.761  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:11.951  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-2(int)=254
+10-31 22:01:11.951  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=167, y=290, idx=139367
+10-31 22:01:11.961  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:12.171  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-2(int)=254
+10-31 22:01:12.171  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=488, y=288, idx=138728
+10-31 22:01:12.181  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 244, Y = 288
+10-31 22:01:12.181  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 320 width and 480 height.
+10-31 22:01:12.181  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 6
+10-31 22:01:12.211  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:12.401  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-2(int)=254
+10-31 22:01:12.401  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=338, y=295, idx=141938
+10-31 22:01:12.411  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:12.611  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-2(int)=254
+10-31 22:01:12.611  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=498, y=308, idx=148338
+10-31 22:01:12.621  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 249, Y = 308
+10-31 22:01:12.621  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 320 width and 480 height.
+10-31 22:01:12.621  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 7
+10-31 22:01:12.631  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:12.931  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-2(int)=254
+10-31 22:01:12.931  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=178, y=314, idx=150898
+10-31 22:01:12.951  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:13.141  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-2(int)=254
+10-31 22:01:13.141  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=183, y=314, idx=150903
+10-31 22:01:13.151  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 91, Y = 314
+10-31 22:01:13.151  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 320 width and 480 height.
+10-31 22:01:13.151  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 8
+10-31 22:01:13.161  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:01:13.361  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-2(int)=254
+10-31 22:01:13.371  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=499, y=312, idx=150259
+10-31 22:01:13.511  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 249, Y = 312
+10-31 22:01:13.511  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 320 width and 480 height.
+10-31 22:01:13.511  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 9
+
+
+
+na sirku:
+
+
+
+
+
+10-31 22:02:17.521  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas or middle coordinates are null.
+10-31 22:02:17.551  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:02:17.821  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=1(int)=1
+10-31 22:02:17.821  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=0, y=0, idx=0
+10-31 22:02:17.831  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:02:18.051  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=2(int)=2
+10-31 22:02:18.051  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=271, y=64, idx=30991
+10-31 22:02:18.061  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 203, Y = 42
+10-31 22:02:18.071  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 480 width and 320 height.
+10-31 22:02:18.071  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 1
+10-31 22:02:18.091  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:02:18.291  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-74(int)=182
+10-31 22:02:18.291  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=548, y=157, idx=75908
+10-31 22:02:18.301  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:02:18.501  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-22(int)=234
+10-31 22:02:18.501  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=344, y=164, idx=79064
+10-31 22:02:18.511  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 258, Y = 109
+10-31 22:02:18.511  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 480 width and 320 height.
+10-31 22:02:18.511  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 2
+10-31 22:02:18.521  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:02:18.781  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-36(int)=220
+10-31 22:02:18.781  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=484, y=161, idx=77764
+10-31 22:02:18.791  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:02:19.021  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-49(int)=207
+10-31 22:02:19.021  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=587, y=190, idx=91787
+10-31 22:02:19.031  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 440, Y = 126
+10-31 22:02:19.031  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 480 width and 320 height.
+10-31 22:02:19.031  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 3
+10-31 22:02:19.041  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:02:19.271  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-40(int)=216
+10-31 22:02:19.271  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=261, y=231, idx=111141
+10-31 22:02:19.271  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:02:19.481  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-37(int)=219
+10-31 22:02:19.481  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=288, y=159, idx=76608
+10-31 22:02:19.491  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 216, Y = 106
+10-31 22:02:19.491  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 480 width and 320 height.
+10-31 22:02:19.491  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 4
+10-31 22:02:19.501  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:02:19.701  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-34(int)=222
+10-31 22:02:19.701  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=577, y=249, idx=120097
+10-31 22:02:19.711  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:02:19.931  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-29(int)=227
+10-31 22:02:19.931  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=413, y=228, idx=109853
+10-31 22:02:19.931  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 309, Y = 152
+10-31 22:02:19.941  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 480 width and 320 height.
+10-31 22:02:19.941  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 5
+10-31 22:02:19.951  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:02:20.181  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-39(int)=217
+10-31 22:02:20.181  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=169, y=211, idx=101449
+10-31 22:02:20.191  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:02:20.421  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-27(int)=229
+10-31 22:02:20.421  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=328, y=208, idx=100168
+10-31 22:02:20.431  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 246, Y = 138
+10-31 22:02:20.431  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 480 width and 320 height.
+10-31 22:02:20.431  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 6
+10-31 22:02:20.441  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:02:20.641  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-48(int)=208
+10-31 22:02:20.651  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=574, y=233, idx=112414
+10-31 22:02:20.651  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:02:20.851  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-46(int)=210
+10-31 22:02:20.851  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=261, y=223, idx=107301
+10-31 22:02:20.851  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 195, Y = 148
+10-31 22:02:20.861  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 480 width and 320 height.
+10-31 22:02:20.861  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 7
+10-31 22:02:20.961  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:02:21.111  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-22(int)=234
+10-31 22:02:21.121  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=247, y=191, idx=91927
+10-31 22:02:21.151  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Preview has 640 width and 480 height. There are 460800 bytes.
+10-31 22:02:21.361  26366-26366/cz.wz.kotrj7am.myfirstapp D/CameraPreview﹕ Brightest pixel has value (byte)=-71(int)=185
+10-31 22:02:21.361  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Middle set to x=511, y=197, idx=95071
+10-31 22:02:21.361  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Rectangle drawn at X = 383, Y = 131
+10-31 22:02:21.361  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ Canvas has 480 width and 320 height.
+10-31 22:02:21.361  26366-26366/cz.wz.kotrj7am.myfirstapp D/OverlayView﹕ rectangle drawn for 8
