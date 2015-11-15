@@ -1,5 +1,7 @@
 package cz.wz.kotrj7am.spectrum.test;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -28,11 +30,12 @@ public class Main {
 		}
 	}
 	
+	public static final int width = 640;
+	public static final int height = 480;
+	
 	private static void decode(File file){
 
 		String name = file.getName();
-		int width = 640;
-		int height = 480;
 		
 		try {
 			byte[] data = readSmallBinaryFile(file.getPath());
@@ -54,10 +57,85 @@ public class Main {
 			ImageIO.write(img, "png", new File(DEST + name + "-1.png"));
 			ImageIO.write(img2, "png", new File(DEST + name + "-2.png"));
 			
+			modify(img, rgbints1);
+			ImageIO.write(img, "png", new File(DEST + name + "-3.png"));
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public static final int widthRect = 100;
+	public static final int heightRect = 100;
+	
+	private static void modify(BufferedImage img, int[] rgbints){
+		Graphics2D g = img.createGraphics();
+		RGB brightest = RGB.getColor(0);
+        Coordinates coordinates = new Coordinates();
+		
+		for(int y = 0; y < height; ++y){
+            for(int x = 0; x < width; ++x){
+                int idx = y * height + x;
+                int current = rgbints[idx];
+                
+                RGB clr = RGB.getColor(current);
+                
+                if(!brightest.brighterThan(clr)){
+                	brightest = clr;
+                    coordinates.setAll(x, y, idx);
+                }
+            }
+        }
+		
+		g.setColor(new Color(255, 0, 0));
+		
+		int sizeHalf = widthRect/2;
+		
+		g.drawRect(coordinates.x - sizeHalf, coordinates.y - sizeHalf, widthRect, heightRect);
+		
+	}
+	
+	public static class Coordinates{
+        public int x = 0;
+        public int y = 0;
+        public int idx = 0;
+
+        public Coordinates(){
+        }
+
+        public Coordinates(int x, int y, int idx){
+            setAll(x, y, idx);
+        }
+
+        public void setAll(int x, int y, int idx){
+            this.x = x;
+            this.y = y;
+            this.idx = idx;
+        }
+    }
+	
+	private static class RGB {
+		public int r, g, b; 
+		
+		public static RGB getColor(int clr){
+			RGB rgb = new RGB();
+			rgb.r =  clr & 0x000000ff;
+			rgb.g = (clr & 0x0000ff00) >> 8;
+			rgb.b = (clr & 0x00ff0000) >> 16;
+			return rgb;
+		}
+		
+		public boolean brighterThan(RGB other){
+			int thiss = r + g + b;
+			int otherr = other.r + other.g + other.b;
+			boolean res = thiss > otherr;
+			return res;
+		}
+	}
+	
+	private static void findBrightest(int[] arr){
+		
 	}
 	
 	private static byte[] readSmallBinaryFile(String aFileName) throws IOException {
