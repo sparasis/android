@@ -170,7 +170,9 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
         if (overlayView != null) {
             overlayView.setPreviewSize(size.width, size.height);
-            overlayView.setMiddle(findBrightestPixel(data, size.width, size.height));
+            Coordinates brightest = findBrightestPixel(data, size.width, size.height);
+            RGB rgb = getRgb(data, size.width, size.height, brightest);
+            overlayView.setMiddle(brightest, rgb);
             overlayView.invalidate();
         }
 
@@ -253,7 +255,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
         for(int y = 0; y < height; ++y){
             for(int x = 0; x < width; ++x){
-                int idx = y * height + x;
+                int idx = y * width + x;
                 int current = data[idx];
                 if(current < 0){
                     current += 256;
@@ -270,10 +272,156 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         return coordinates;
     }
 
+    private Object lock = new Object();
+    private boolean stopped;
+
+    public void startPreview(){
+        synchronized(lock){
+            mCamera.startPreview();
+        }
+    }
+
+    private boolean capture = false;
+
+    public void captureImage(){
+        synchronized(lock){
+            capture = true;
+        }
+    }
+
+    private static RGB getRgb(byte[] fg, int width, int height, Coordinates co) throws NullPointerException, IllegalArgumentException {
+        int sz = width * height;
+        if (fg == null)
+            throw new NullPointerException("buffer 'fg' is null");
+        if (fg.length < sz)
+            throw new IllegalArgumentException("buffer fg size " + fg.length + " < minimum " + sz * 3 / 2);
+        int Y, Cr = 0, Cb = 0;
+        final int jDiv2 = co.y >> 1;
+        Y = fg[co.idx];
+        if (Y < 0){
+            Y += 255;
+        }
+        final int cOff = sz + jDiv2 * width + (co.x >> 1) * 2;
+        Cb = fg[cOff];
+        if (Cb < 0)
+            Cb += 127;
+        else
+            Cb -= 128;
+        Cr = fg[cOff + 1];
+        if (Cr < 0)
+            Cr += 127;
+        else
+            Cr -= 128;
+
+        int R = Y + Cr + (Cr >> 2) + (Cr >> 3) + (Cr >> 5);
+        if (R < 0)
+            R = 0;
+        else if (R > 255)
+            R = 255;
+        int G = Y - (Cb >> 2) + (Cb >> 4) + (Cb >> 5) - (Cr >> 1) + (Cr >> 3) + (Cr >> 4) + (Cr >> 5);
+        if (G < 0)
+            G = 0;
+        else if (G > 255)
+            G = 255;
+        int B = Y + Cb + (Cb >> 1) + (Cb >> 2) + (Cb >> 6);
+        if (B < 0)
+            B = 0;
+        else if (B > 255)
+            B = 255;
+
+        RGB rgb = new RGB();
+        rgb.r = R;
+        rgb.g = G;
+        rgb.b = B;
+        return rgb;
+    }
+
+    public static class HSV{
+        public double h = 0;
+        public double s = 0;
+        public double v = 0;
+
+        public static HSV convert(RGB rgb){
+            HSV hsv = new HSV();
+            int max = rgb.r, min = rgb.r;
+            if (rgb.g > max) {
+                max = rgb.g;
+            }
+            if (rgb.b > max) {
+                max = rgb.b;
+            }
+            if (rgb.g < min) {
+                min = rgb.g;
+            }
+            if (rgb.b < min) {
+                min = rgb.b;
+            }
+            hsv.v = max/255.0;
+            int delta = max - min;
+            if (delta > 0.0) {
+                // if delta is not 0 then max cannot be 0
+                hsv.s = ((double)delta) / max;
+                if (max == rgb.r) {
+                    hsv.h = (double)(rgb.g - rgb.b) / delta;
+                }
+                else if (max == rgb.g) {
+                    hsv.h = (rgb.b - rgb.r) / delta + 2;
+                }
+                else {
+                    hsv.h = (rgb.r - rgb.g) / delta + 4;
+                }
+                hsv.h *= 60;
+                if (hsv.h < 0.0) {
+                    hsv.h += 360.0;
+                }
+            }
+            else {
+                hsv.s = 0.0;
+                hsv.h = 0.0;
+            }
+            return hsv;
+        }
+
+        public RGB getCategory(){
+            RGB rgb = new RGB();
+            if(h < 30){
+                // red
+                rgb.setAll(255,  0,  0);
+                rgb.name = "red";
+            } else if(h < 90){
+                // yellow
+                rgb.setAll(255, 255, 0);
+                rgb.name = "yellow";
+            } else if(h < 150){
+                // green
+                rgb.setAll(0, 255, 0);
+                rgb.name = "green";
+            } else if(h < 210){
+                // cyan
+                rgb.setAll(0, 255, 255);
+                rgb.name = "cyan";
+            } else if(h < 270){
+                // blue
+                rgb.setAll(0, 0, 255);
+                rgb.name = "blue";
+            } else if(h < 330){
+                // magenta
+                rgb.setAll(255, 0, 255);
+                rgb.name = "magenta";
+            } else {
+                // red
+                rgb.setAll(255,  0,  0);
+                rgb.name = "red";
+            }
+            return rgb;
+        }
+    }
+
     public static class Coordinates{
         public int x = 0;
         public int y = 0;
         public int idx = 0;
+        public RGB rgb = new RGB();
 
         public Coordinates(){
         }
@@ -289,20 +437,29 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         }
     }
 
-    private Object lock = new Object();
-    private boolean stopped;
+    public static class RGB {
+        public int r, g, b;
+        public String name;
 
-    public void startPreview(){
-        synchronized(lock){
-            mCamera.startPreview();
+        public static RGB getColor(int clr){
+            RGB rgb = new RGB();
+            rgb.r =  clr & 0x000000ff;
+            rgb.g = (clr & 0x0000ff00) >> 8;
+            rgb.b = (clr & 0x00ff0000) >> 16;
+            return rgb;
         }
-    }
 
-    private boolean capture = false;
+        public boolean brighterThan(RGB other){
+            int thiss = r + g + b;
+            int otherr = other.r + other.g + other.b;
+            boolean res = thiss > otherr;
+            return res;
+        }
 
-    public void captureImage(){
-        synchronized(lock){
-            capture = true;
+        public void setAll(int r, int g, int b){
+            this.r = r;
+            this.g = g;
+            this.b = b;
         }
     }
 }

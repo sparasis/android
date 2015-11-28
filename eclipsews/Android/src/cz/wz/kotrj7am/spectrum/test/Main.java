@@ -57,8 +57,13 @@ public class Main {
 			ImageIO.write(img, "png", new File(DEST + name + "-1.png"));
 			ImageIO.write(img2, "png", new File(DEST + name + "-2.png"));
 			
-			modify(img, rgbints1);
+			System.out.println("Image: " + name);
+			
+			modify(img, rgbints1, data);
 			ImageIO.write(img, "png", new File(DEST + name + "-3.png"));
+			
+			//modify(img2, rgbints2, data);
+			//ImageIO.write(img2, "png", new File(DEST + name + "-4.png"));
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -66,19 +71,19 @@ public class Main {
 		}
 	}
 	
-	public static final int widthRect = 100;
-	public static final int heightRect = 100;
+	public static final int widthRect = 20;
+	public static final int heightRect = 20;
 	
-	private static void modify(BufferedImage img, int[] rgbints){
+	private static void modify(BufferedImage img, int[] rgbints, byte[] data){
 		Graphics2D g = img.createGraphics();
 		RGB brightest = RGB.getColor(0);
         Coordinates coordinates = new Coordinates();
 		
 		for(int y = 0; y < height; ++y){
             for(int x = 0; x < width; ++x){
-                int idx = y * height + x;
+                int idx = y * width + x;
                 int current = rgbints[idx];
-                
+                                
                 RGB clr = RGB.getColor(current);
                 
                 if(!brightest.brighterThan(clr)){
@@ -88,18 +93,152 @@ public class Main {
             }
         }
 		
+		// red is own
 		g.setColor(new Color(255, 0, 0));
-		
+		int widthRect = Main.widthRect;
 		int sizeHalf = widthRect/2;
-		
 		g.drawRect(coordinates.x - sizeHalf, coordinates.y - sizeHalf, widthRect, heightRect);
+		System.out.println("Brightest own pixel: x=" + coordinates.x + ", y=" + coordinates.y);
+		System.out.println("Brightest own pixel: r=" + brightest.r + ", g=" + brightest.g + ", b=" + brightest.b);
 		
+		// green is second alorithm
+		coordinates = findBrightestPixel(data, width, height);
+		//brightest = coordinates.rgb;
+		g.setColor(new Color(119, 226, 242));
+		widthRect = Main.widthRect + 10;
+		int heightRect = Main.heightRect +10;
+		sizeHalf = widthRect/2;
+		g.drawRect(coordinates.x - sizeHalf, coordinates.y - sizeHalf, widthRect, heightRect);
+		System.out.println("Brightest first alg. pixel: x=" + coordinates.x + ", y=" + coordinates.y);
+		//System.out.println("Brightest first alg. pixel: r=" + brightest.r + ", g=" + brightest.g + ", b=" + brightest.b);
+		
+		RGB rgb = getRgb(data, width, height, coordinates);
+		RGB other = RGB.getColor(rgbints[coordinates.idx]);
+		System.out.println("Just one: r=" + rgb.r + ", g=" + rgb.g + ", b=" + rgb.b);
+		System.out.println("ze array: r=" + other.r + ", g=" + other.g + ", b=" + other.b);
+		
+
+		g.setColor(new Color(rgb.r, rgb.g, rgb.b));
+		g.drawRect(0, 0, 20, 20);
+		
+		HSV hsv = HSV.convert(rgb);
+		System.out.println("HSV: h=" + hsv.h + ", s=" + hsv.s + ", v=" + hsv.v);
+		
+		RGB category = hsv.getCategory();
+		g.setColor(new Color(category.r, category.g, category.b));
+		g.drawString(category.name, 10, 30);
+		g.drawRect(5, 5, 15, 15);
+
+		/*
+		// green is second alorithm
+		coordinates = Main.brightest;
+		brightest = coordinates.rgb;
+		g.setColor(new Color(119, 226, 242));
+		widthRect = Main.widthRect + 10;
+		sizeHalf = widthRect/2;
+		g.drawRect(coordinates.x - sizeHalf, coordinates.y - sizeHalf, widthRect, heightRect);
+		System.out.println("Brightest first alg. pixel: x=" + coordinates.x + ", y=" + coordinates.y);
+		System.out.println("Brightest first alg. pixel: r=" + brightest.r + ", g=" + brightest.g + ", b=" + brightest.b);
+
+		// yellow is second alorithm
+		coordinates = Main.brightest2;
+		brightest = coordinates.rgb;
+		g.setColor(new Color(226, 246, 46));
+		widthRect = Main.widthRect - 10;
+		sizeHalf = widthRect/2;
+		g.drawRect(coordinates.x - sizeHalf, coordinates.y - sizeHalf, widthRect, heightRect);
+		System.out.println("Brightest second alg. pixel: x=" + coordinates.x + ", y=" + coordinates.y);
+		System.out.println("Brightest second alg. pixel: r=" + brightest.r + ", g=" + brightest.g + ", b=" + brightest.b);
+		/**/
+		
+	}
+	
+	public static class HSV{
+        public double h = 0;
+        public double s = 0;
+        public double v = 0;
+        
+        public static HSV convert(RGB rgb){
+        	HSV hsv = new HSV();
+        	int max = rgb.r, min = rgb.r;
+			if (rgb.g > max) {
+				max = rgb.g;
+			}
+			if (rgb.b > max) {
+				max = rgb.b;
+			}
+			if (rgb.g < min) {
+				min = rgb.g;
+			}
+			if (rgb.b < min) {
+				min = rgb.b;
+			}
+			hsv.v = max/255.0;
+			int delta = max - min;
+			if (delta > 0.0) {
+				// if delta is not 0 then max cannot be 0
+				hsv.s = ((double)delta) / max;
+				if (max == rgb.r) {
+					hsv.h = (double)(rgb.g - rgb.b) / delta;
+				}
+				else if (max == rgb.g) {
+					hsv.h = (rgb.b - rgb.r) / delta + 2;
+				}
+				else {
+					hsv.h = (rgb.r - rgb.g) / delta + 4;
+				}
+				hsv.h *= 60;
+				if (hsv.h < 0.0) {
+					hsv.h += 360.0;
+				}
+			}
+			else {
+				hsv.s = 0.0;
+				hsv.h = 0.0;
+			}
+        	return hsv;
+        }
+        
+        public RGB getCategory(){
+        	RGB rgb = new RGB();
+        	if(h < 30){
+        		// red
+        		rgb.setAll(255,  0,  0);
+        		rgb.name = "red";
+        	} else if(h < 90){
+        		// yellow
+        		rgb.setAll(255, 255, 0);
+        		rgb.name = "yellow";
+        	} else if(h < 150){
+        		// green
+        		rgb.setAll(0, 255, 0);
+        		rgb.name = "green";
+        	} else if(h < 210){
+        		// cyan
+        		rgb.setAll(0, 255, 255);
+        		rgb.name = "cyan";
+        	} else if(h < 270){
+        		// blue
+        		rgb.setAll(0, 0, 255);
+        		rgb.name = "blue";
+        	} else if(h < 330){
+        		// magenta
+        		rgb.setAll(255, 0, 255);
+        		rgb.name = "magenta";
+        	} else {
+        		// red
+        		rgb.setAll(255,  0,  0);
+        		rgb.name = "red";
+        	}
+        	return rgb;
+        }
 	}
 	
 	public static class Coordinates{
         public int x = 0;
         public int y = 0;
         public int idx = 0;
+        public RGB rgb = new RGB();
 
         public Coordinates(){
         }
@@ -117,6 +256,7 @@ public class Main {
 	
 	private static class RGB {
 		public int r, g, b; 
+		public String name;
 		
 		public static RGB getColor(int clr){
 			RGB rgb = new RGB();
@@ -132,17 +272,41 @@ public class Main {
 			boolean res = thiss > otherr;
 			return res;
 		}
+
+        public void setAll(int r, int g, int b){
+            this.r = r;
+            this.g = g;
+            this.b = b;
+        }
 	}
 	
-	private static void findBrightest(int[] arr){
-		
+	public static Coordinates findBrightestPixel(byte[] data, int width, int height){
+        int brightest = 0;
+        Coordinates coordinates = new Coordinates();
+
+        for(int y = 0; y < height; ++y){
+            for(int x = 0; x < width; ++x){
+                int idx = y * width + x;
+                int current = data[idx];
+                if(current < 0){
+                    current += 256;
+                }
+                if(current > brightest){
+                    brightest = current;
+                    coordinates.setAll(x, y, idx);
+                }
+            }
+        }
+
+        return coordinates;
 	}
 	
 	private static byte[] readSmallBinaryFile(String aFileName) throws IOException {
 	    Path path = Paths.get(aFileName);
 	    return Files.readAllBytes(path);
 	}
-	
+
+	private static Coordinates brightest = new Coordinates();
 
     /**
      * Decodes YUV frame to a buffer which can be use to create a bitmap. use
@@ -207,12 +371,77 @@ public class Main {
                     B = 0;
                 else if (B > 255)
                     B = 255;
+                
+
+                
+                RGB rgb = new RGB();
+                rgb.r = R;
+                rgb.g = G;
+                rgb.b = B;
+                
+                if(rgb.brighterThan(brightest.rgb)){
+                	brightest.rgb = rgb;
+                	brightest.x = i;
+                	brightest.y = j;
+                }
+                
+                
                 out[pixPtr++] = 0xff000000 + (B << 16) + (G << 8) + R;
             }
         }
 
     }
+    
+    private static RGB getRgb(byte[] fg, int width, int height, Coordinates co) throws NullPointerException, IllegalArgumentException {
+        int sz = width * height;
+        if (fg == null)
+            throw new NullPointerException("buffer 'fg' is null");
+        if (fg.length < sz)
+            throw new IllegalArgumentException("buffer fg size " + fg.length + " < minimum " + sz * 3 / 2);
+        int Y, Cr = 0, Cb = 0;
+	    final int jDiv2 = co.y >> 1;
+        Y = fg[co.idx];
+        if (Y < 0){
+            Y += 255;
+        }
+        final int cOff = sz + jDiv2 * width + (co.x >> 1) * 2;
+        Cb = fg[cOff];
+        if (Cb < 0)
+            Cb += 127;
+        else
+            Cb -= 128;
+        Cr = fg[cOff + 1];
+        if (Cr < 0)
+            Cr += 127;
+        else
+            Cr -= 128;
+        
+        int R = Y + Cr + (Cr >> 2) + (Cr >> 3) + (Cr >> 5);
+        if (R < 0)
+            R = 0;
+        else if (R > 255)
+            R = 255;
+        int G = Y - (Cb >> 2) + (Cb >> 4) + (Cb >> 5) - (Cr >> 1) + (Cr >> 3) + (Cr >> 4) + (Cr >> 5);
+        if (G < 0)
+            G = 0;
+        else if (G > 255)
+            G = 255;
+        int B = Y + Cb + (Cb >> 1) + (Cb >> 2) + (Cb >> 6);
+        if (B < 0)
+            B = 0;
+        else if (B > 255)
+            B = 255;
+        
+        RGB rgb = new RGB();
+        rgb.r = R;
+        rgb.g = G;
+        rgb.b = B;
+        return rgb;
+    }
 
+	
+	private static Coordinates brightest2 = new Coordinates();
+	
     public static void YUV_NV21_TO_RGB(int[] argb, byte[] yuv, int width, int height) {
         final int frameSize = width * height;
 
@@ -236,6 +465,17 @@ public class Main {
                 r = r < 0 ? 0 : (r > 255 ? 255 : r);
                 g = g < 0 ? 0 : (g > 255 ? 255 : g);
                 b = b < 0 ? 0 : (b > 255 ? 255 : b);
+                
+                RGB rgb = new RGB();
+                rgb.r = r;
+                rgb.g = g;
+                rgb.b = b;
+                
+                if(rgb.brighterThan(brightest2.rgb)){
+                	brightest2.rgb = rgb;
+                	brightest2.x = cj;
+                	brightest2.y = ci;
+                }
 
                 argb[a++] = 0xff000000 | (r << 16) | (g << 8) | b;
             }

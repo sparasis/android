@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="cz.wz.kotrj7am.spectrum.test.Main.Coordinates"/>
+<fullyQualifiedTypeName name="cz.wz.kotrj7am.spectrum.test.Main.HSV"/>
+<fullyQualifiedTypeName name="cz.wz.kotrj7am.spectrum.test.Main.RGB"/>
+</qualifiedTypeNameHistroy>

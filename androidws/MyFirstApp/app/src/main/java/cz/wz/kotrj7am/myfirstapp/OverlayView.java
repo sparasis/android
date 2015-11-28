@@ -57,7 +57,7 @@ public class OverlayView extends View {
 
         //canvas.drawRect(start, boxTop, start + boxSize, boxSize + boxTop, myPaint);
         //canvas.drawRect(start, boxTop, start + boxSize, boxSize + boxTop, OverlayView.paint);
-        drawRect(middle, boxSize, OverlayView.paint, canvas);
+        drawRect(middle, rgb, boxSize, OverlayView.paint, canvas);
 
         /**/
 
@@ -94,9 +94,11 @@ public class OverlayView extends View {
     }
 
     private CameraPreview.Coordinates middle;
+    private CameraPreview.RGB rgb;
 
-    public void setMiddle(CameraPreview.Coordinates middle){
+    public void setMiddle(CameraPreview.Coordinates middle, CameraPreview.RGB rgb){
         this.middle = middle;
+        this.rgb = rgb;
         Log.d(TAG, "Middle set to x=" + middle.x + ", y=" + middle.y + ", idx=" + middle.idx);
     }
 
@@ -109,7 +111,8 @@ public class OverlayView extends View {
     }
 
     //*
-    public void drawRect(CameraPreview.Coordinates middle, int size, Paint paint, Canvas canvas){
+    public void drawRect(CameraPreview.Coordinates middle, CameraPreview.RGB rgb, int size,
+                         Paint paint, Canvas canvas){
         int sizeHalf = size/2;
         double x = middle.x;
         double y = middle.y;
@@ -128,6 +131,15 @@ public class OverlayView extends View {
 
         canvas.drawRect(ix - sizeHalf, iy - sizeHalf,
                 ix + sizeHalf, iy + sizeHalf, paint);
+
+        CameraPreview.RGB category = CameraPreview.HSV.convert(rgb).getCategory();
+        Paint paintCat = new Paint();
+        paintCat.setColor(Color.rgb(rgb.r, rgb.g, rgb.b));
+        paintCat.setStrokeWidth(1);
+        paintCat.setStyle(Paint.Style.STROKE);
+        canvas.drawText(category.name, 10, 10, paintCat);
+
+        Log.d(TAG, "Drawn text: " + category.name);
     }
     /**/
 
